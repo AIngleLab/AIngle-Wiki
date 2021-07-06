@@ -1,293 +1,178 @@
-# AIngle Developer KIT for installation
+## Introduction
 
-- ​	Hardware requirements for Development Environment
-- ​	2 GB RAM at least (more than 4 GB recommended)
-- ​	2 CPUs at least (more than 4 CPUs recommended)
-- ​	More than 15 GB of available on-disk space
-- ​	Internet connection
+ AIngle is a distributed-ledger technology built from the ground up to support real-time communication among IoT devices with quantum-level security. These installation instructions are intended to install AIngle on any machine running Python code via Kafka. 
 
-## Linux and Windows Linux subSystem
+### Requirements
 
-### Install nix Package
+- Python 3.x and above
+- Ubuntu 14.04 and above
 
-Use the Nix toolkit to manage the installation for development tools, thus avoiding incompatibility of packages and compilers:
+### Packages to install:
 
-```
-`sh <(curl -L https://nixos.org/nix/install)`
-```
+Please follow the 
 
-After installing Nix, it is recommended to restart the computer and run the following command:
+#### <u>Python:</u>
 
-```
-`. ~/.nix-profile/etc/profile.d/nix.sh`
-```
-
-Check that it was installed correctly by running:
-
-```
-`nix-shell --version`
-```
-
-Then, It must be displayed:
-
-```
-`nix-shell (Nix) 3.X.X` 
-```
-
-
-
-### Installing the AIngle development tools
-
-Now that you have installed Nix, you can proceed to install and run a development shell containing all the prerequisites, including the correct versions of Rust and Node.js and the AIngle tools. This shell will not interfere with the current system configuration.
-
-Use this line delineator to install **Ainglenix**:
-
-```
-`nix-shell https://install.AIngle.ai`
-```
-
-In this process the AIngle Binaries will be compiled. Once this is finished, you will be in the **ainglenix** shell with all the development tools at your disposal. You will see a new bash message that looks like this:
-
-```
-`[nix-shell:~]$`
-```
-
-Use the following command to test the AIngle execution:
-
-```
-`AIngle --version`
-```
-
-Then, It must be displayed:
-
-```
-`AIngle Beta-0.0.1` 
-```
-
-Use the command `exit` to close the shell.
-
-### `Use` of AIngle development tools
-
-You can Upgrade the AIngle version with the **Ainglenix** shell with the same command you used to install it:
-
-```
-`nix-shell https://install.AIngle.ai`
-```
-
-This command always keep you up to date with the latest stable version of AIngle and development tools. 
-
-## MacOS
-
-### Pre-installed software (link):
-
-[XCode developers tool](https://apps.apple.com/us/app/xcode/id497799835?mt=12)
-
-### Install nix Package
-
-We use the Nix toolkit to manage the installation of our development tools, thus avoiding incompatibility of packages and compilers:
-
-#### macOS 10.15 Catalina and superior version
-
-```
-ssh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume
-```
-
-
-
-####  macOS 10.14 Mojave y previous versions[¶](https://developer.holochain.org/docs/install/#macos-1014-mojave-and-earlier)
-
-```
-`sh <(curl -L https://nixos.org/nix/install)`
-```
-
-After installing Nix, it is recommended to restart the computer and run the following command:
-
-```
-`. ~/.nix-profile/etc/profile.d/nix.sh`
-```
-
-Check that it was installed correctly by running:
-
-```
-`nix-shell --version`
-```
-
-You should see something like this:
-
-```
-`nix-shell (Nix) 3.X.X` 
-```
-
-
-
-### Use of AIngle development tools
-
-Now that you have installed Nix, you can install and run a development shell containing all the prerequisites, including the correct versions of Rust and Node.js and the AIngle tools. This shell will not interfere with the current system configuration.
-
-Use this line delineator to install Ainglenix:
-
-```
-`nix-shell https://install.AIngle.ai`
-```
-
-In this process the AIngle Binaries will be compiled. Once it is finished, you will be in the ainglenix shell with all the development tools at your disposal. You will see a new bash message that looks like:
-
-```
-`[nix-shell:~]$`
-```
-
-Use the following command to test the AIngle execution:
-
-```
-`AIngle --version`
-```
-
-You should see something like this:
-
-```
-`AIngle Beta-0.0.1`
-```
-
-## Generate AIngle IDs in javascript. A thin wrapper around rust compiled to WASM
-
-### Installation
-
-This package is distributed via npm and can be installed using:
-
-```javascript
-npm install @AIngle/ai-id-js
-```
-
-Usage
-
-This module exports a class called Encoding which can be used to construct an encoding for the different types of AIngle identifiers. Each of these identifiers are given a three character prefix:
-
-```javascript
-AgentID (from signing key) : 'ais'
-```
-
-Depending on if you are using the module in node.js or the browser the calling syntax is slightly different. This is because in the browser the WASM must be asynchronously compiled and instantiated to prevent blocking the main thread. As a result, all of the constructor returns a promises in the browser but not in node.
-
-```javascript
-const publicKey = [...] // UInt8Array of bytes of public key
-
-const enc = new Encoding('ais0') // node.js
-
-const enc = await new Encoding('ais0') // browser
-
-const agentId = enc.encode(publicKey)
-
-const restoredPublicKey = enc.decode(id)
-```
-
-### Building
-
-From the root of the repo (ai-id) the package can be build using
+First make sure that you have Python 3.x and above installed in the device that will be communicating via AIngle with other devices.  Rund the following command.
 
 ```shell
-make build
+pip install kafka-python
 ```
 
-and tests run using
+This should return the following success message
 
 ```shell
-make test
+Successfully installed kafka-python-x.x.x
 ```
 
-Note this runs browser tests which may fail if you do not have both firefox and chrome installed. On linux set the environment variable `CHROME_BIN=chromium.`  
+The actual version, might be a different depending on when you install it. 
 
+#### <u>Install Rust language:</u>
 
+Next you need to install the latest version of the Rust language, which is used because it is the multi-language support language that we use internally for AIngle.
 
-## Python
-
-### Test
+Run the folling command on your terminal or command console.
 
 ```shell
-$ git clone https://github.com/AingleLab/RustPython
-
-$ cd RustPython 
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
---release is needed (at least on windows) to prevent stack overflow
+If everyting goes well, you should receive the following prompt. Please select the number 1 option and press enter.
 
-```rust
-$ cargo run --release demo.py
+```shell
+1) Proceed with installation (default)
+2) Customize installation
+3) Cancel installation
+> 1
 ```
 
-`Hello, RustPython!` 
+After a while you shoudl receive the following success message
 
-### Install
+```shell
+Rust is installed now. Great!
+```
+
+#### <u>Check the installation of Rust</u>:
+
+You can test the Rust installation with the following command.  
+
+**IMPORTANT**: Before you do so, please open a new terminal or console and run the following command.
+
+```shell
+rustc --version
+```
+
+If you runned the above command on a new terminal or console, you should see the following message, confirming that you have successfully installed Rust
+
+```shell
+rustc 1.53.0 (53cb7b09b 2021-06-17)
+```
+
+The actual version, might be a different depending on when you install it. 
+
+#### <u>Download the source code from the following repository:</u>
+
+After you have completed the above steps, you are ready to download the AIngle package from GitHub. 
+
+Run the following command in the directory you wish to install AIngle
+
+```shell
+git clone --branch Tohoku-University https://github.com/AIngleLab/AIngle-Wiki.git aingle
+```
+
+This will download the following folder with all the files you will need:
+
+```
+ls -l
+drwxr-xr-x  6 Yuri  staff  192 Jul  6 09:16 aingle
+```
+
+Run the ls command to view the contents of the AIngle folder
+
+```shell
+cd aingle
+ls -l
+total 24
+-rw-r--r--  1 Yuri  staff   124 Jul  6 09:16 Cargo.toml
+-rw-r--r--  1 Yuri  staff  6477 Jul  6 09:16 README.md
+drwxr-xr-x  6 Yuri  staff   192 Jul  6 09:16 src
+```
+
+#### <u>Add the code to your src folder</u>
+
+If your project folder is on the **opt** directory, then run the following command to copy the Cargo.toml file one level above your **src** folder
+
+```
+mv Cargo.toml ~/opt/NameOfYourProject/
+mv README.md ~/opt/NameOfYourProject/src/
+mv -R src ~/opt/NameOfYourProject/src/
+```
+
+### <u>Test your installation</u>
+
+How to make sure that everything is working.
 
 ```python
-rustpython --install-pip 
+python example.py
+Starting worker..
+Listening..
 ```
 
-### Install conda
+This means that you have successfully installed AIngle!!!
+
+### How to use AIngle in your code
+
+The example.py file has an example of how you need to use AIngle in your source code for your device.  
 
 ```python
-conda install rustpython -c conda-forge 
+# Necessary libraries for the use of kafka
+from kafka import KafkaProducer
+from kafka.errors import KafkaError
+# substitute with PostgreSQL wherever necessary
+import sqlite3
+
+# kafka connection invoker
+producer = KafkaProducer(bootstrap_servers=["kafka.aingle.ai:9092"])
+# Creating table into database!!!
+# Connect to sqlite database
+conn = sqlite3.connect('../data.db')
+# cursor object
+cursor = conn.cursor()
+# drop query
+cursor.execute("DROP TABLE IF EXISTS task")
+# create query
+query = """CREATE TABLE task(
+        ID INT PRIMARY KEY NOT NULL,
+        NAME CHAR(20) NOT NULL )"""
+cursor.execute(query)
+conn.execute("INSERT INTO task (ID,NAME) "
+             "VALUES (1, 'Connection with kafka')")
+# commit and close
+conn.commit()
+conn.close()
+
+
+# To be used in the code fraction, where the data of the canine suit to be written are sent
+def kafka_reproduce():
+    try:
+        print("Starting worker..")
+        conn = sqlite3.connect('../data.db')
+        cursor = conn.execute("SELECT * from task")
+        producer.send('Dog-Suit', str(cursor).encode())
+        print("Listening..")
+    except KafkaError as e:
+        print(e)
+
+
+kafka_reproduce()
 ```
 
-### Run
+If you have any questions or problems, please don't hesitate to contact us at the following Slack channel:
 
-```rust
-cargo build --release --target wasm32-wasi --features="dog-suit" 
-```
+aingle.slack.com
 
-Create Documentation AIngle – Python
+To register in this channel, please click on the following [URL](https://join.slack.com/t/aingle/shared_invite/zt-sj8sntae-xpx9der4fkGdlMwp6tIgDQ)
 
-```rust
-$ cargo doc # Including documentation for all dependencies
+https://join.slack.com/t/aingle/shared_invite/zt-sj8sntae-xpx9der4fkGdlMwp6tIgDQ
 
-$ cargo doc --no-deps --all # Excluding all dependencies 
-```
 
-## JAVA & C++
-
-### Run AIngle
-
-```c++
-aishell -w 8888
-```
-
-#### Create AIngle instance
-
-```c++
-var safHash = Container.installedApps()[0]
-
-var app = Container.instantiate(safHash)// app is actually a C++ and Java object that wraps the Rust AIngle instanceapp.name() // -> 
-
-App name defined in SAFapp.start() // starts the instance's event loop and later will start the network node and SGD
-
-var result = app.call("core name", "capability name", "function name", "parameters") // runs the zome function which involves interpreting the app's WASM code 
-```
-
-#### Websockets
-
-```c++
-apt-get update && apt-get install --yes \
-
-qtdeclarative5-dev \l
-
-ibqt5websockets5-dev \
-
-libreadline6-dev 
-```
-
-#### Compile and build
-
-```rust
-cargo build 
-```
-
-#### Qt Build Option
-
-```shell
-cd bindings
-
-qmake # or with CONFIG+=debug
-
-make
-
-cd ..
-```
