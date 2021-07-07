@@ -129,6 +129,7 @@ received message: {"category":"DOG","noise":"find "}
 received message: {"category":"DOG","noise":"find "}
 ...
 ```
+### How to get support
 
 If you have any questions or problems, please don't hesitate to contact us at the following Slack channel:
 
