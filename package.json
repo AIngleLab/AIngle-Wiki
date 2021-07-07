@@ -1,0 +1,22 @@
+{
+  "name": "node-kafka-aingle",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:producer": "node producer/index.js",
+    "start:consumer": "node consumer/index.js"
+  },
+  "author": "Ainlge Team",
+  "license": "MIT",
+  "dependencies": {
+    "@aingle/aiid-js": "^0.0.5",
+    "avsc": "^5.6.2",
+    "node": "^16.4.0",
+    "node-rdkafka": "^2.10.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4"
+  }
+}
