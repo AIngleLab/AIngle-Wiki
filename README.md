@@ -1,5 +1,15 @@
 # AIngle Development KIT for Japan Pilot V1
 
+AIngle is a distributed-ledger technology built from the ground up to support real-time communication among IoT devices with quantum-level security. These installation instructions are intended to install AIngle on any machine running C++ code via Kafka.
+
+If you need to connect any of your FASTER IoT devices, the integration could not be simpler.  If your connection to FASTER is done through Kafka, you will only need to change your Kafka broker URL.  Here is the address of the FASTER-AIngle Kafka broker URL:
+
+```shell
+kafka.aingle.ai:9092
+```
+
+That's it!!!  You should now be connected to the KAFKA-AIngle broker.
+
 ## Instructions for Python
 
 ```
