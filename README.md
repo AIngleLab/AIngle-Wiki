@@ -14,6 +14,13 @@ https://github.com/AIngleLab/AIngle-Wiki/tree/Tohoku-University
 https://github.com/AIngleLab/AIngle-Wiki/tree/aingle-javascript
 ```
 
+## Instructions for C++
+
+```
+https://github.com/AIngleLab/AIngle-Wiki/tree/aingle-c+%2B
+```
+
+
 ## How to get support
 
 If you have any questions or problems, please don't hesitate to contact us at the following Slack channel:
