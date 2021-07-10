@@ -20,6 +20,12 @@ https://github.com/AIngleLab/AIngle-Wiki/tree/aingle-javascript
 https://github.com/AIngleLab/AIngle-Wiki/tree/aingle-c+%2B
 ```
 
+## Instructions for Java
+
+```
+https://github.com/AIngleLab/AIngle-Wiki/tree/aingle-java
+```
+
 
 ## How to get support
 
