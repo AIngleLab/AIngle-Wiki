@@ -10,7 +10,7 @@ kafka.aingle.ai:9092
 
 That's it!!!  You should now be connected to the KAFKA-AIngle broker.
 
-## Instructions for Python
+## Specific Instructions for Python
 
 ```
 https://github.com/AIngleLab/AIngle-Wiki/tree/Tohoku-University
@@ -18,13 +18,13 @@ https://github.com/AIngleLab/AIngle-Wiki/tree/Tohoku-University
 
 
 
-## Instructions for JavaScript
+## Specific Instructions for JavaScript
 
 ```
 https://github.com/AIngleLab/AIngle-Wiki/tree/aingle-javascript
 ```
 
-## Instructions for C++
+## Specific Instructions for C++
 
 ```
 https://github.com/AIngleLab/AIngle-Wiki/tree/aingle-c+%2B
