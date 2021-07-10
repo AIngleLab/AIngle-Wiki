@@ -28,7 +28,7 @@ You really do not need to change anything on your code other than the address of
 
 ## Example Java Code
 
-This exmaple is provided for illustration purposes only.  The only thing you need to connect to the Kafka AIngle broker is to point to the correct URL provided above. You do not need to read any further to find that answer, but if you insist, we are providing a couple of sample files here: a **producer.java** and a **consumer.java**
+This Example is provided for illustration purposes only.  The only thing you need to connect to the Kafka AIngle broker is to point to the correct URL provided above. You do not need to read any further to find that answer, but if you insist, we are providing a couple of sample files here: a **producer.java** and a **consumer.java**
 
 The following example can run directly from a console. Let's assume that you use Console A and Console B for this purpose.  You will need to run the producer.java code on **Console A** and the consumer.java code on **Console B**.
 
