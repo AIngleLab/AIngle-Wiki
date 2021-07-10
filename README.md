@@ -28,7 +28,7 @@ You really do not need to change anything on your code other than the address of
 
 ## Example C++ Code
 
-This exmaple is provided for illustration purposes only.  The only thing you need to connect to the Kafka AIngle broker is to point to the correct URL provided above. You do not need to read any further to find that answer, but if you insist, we are providing a couple of sample files here: a **producer.cpp** and a **consumer.pp**
+This exmaple is provided for illustration purposes only.  The only thing you need to connect to the Kafka AIngle broker is to point to the correct URL provided above. You do not need to read any further to find that answer, but if you insist, we are providing a couple of sample files here: a **producer.cpp** and a **consumer.cpp**
 
 First of all, the following example was run in our machines using following library (we downloaded it into our **src/** directory). However, you can use any Kafka library of your choice. 
 
