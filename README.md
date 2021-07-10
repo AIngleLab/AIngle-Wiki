@@ -38,6 +38,12 @@ https://github.com/AIngleLab/AIngle-Wiki/tree/aingle-c+%2B
 https://github.com/AIngleLab/AIngle-Wiki/tree/aingle-java
 ```
 
+## Specific Instructions for C#
+
+```
+https://github.com/AIngleLab/AIngle-Wiki/tree/aingle-csharp
+```
+
 
 ## How to get support
 
