@@ -10,7 +10,7 @@ kafka.aingle.ai:9092
 
 That's it!!!  You should now be connected to the KAFKA-AIngle broker.
 
-The following repositories are being provider for the rare cases where you need more specific instructions for your particular environment.
+#### The following repositories are being provider for the rare cases where you need more specific instructions for your particular environment.
 
 ## Specific Instructions for Python
 
