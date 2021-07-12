@@ -12,6 +12,32 @@ That's it!!!  You should now be connected to the KAFKA-AIngle broker.
 
 #### The following repositories are being provider for the rare cases where you need more specific instructions for your particular environment.
 
+## Kafka Configuration for AIngle
+```
+broker.id=0
+advertised.listeners=PLAINTEXT://kafka.aingle.ai:9092
+num.network.threads=3
+num.io.threads=8
+socket.send.buffer.bytes=102400
+socket.receive.buffer.bytes=102400
+socket.request.max.bytes=104857600
+log.dirs=/home/kafka/kafka/kafka/logs
+num.partitions=1
+num.recovery.threads.per.data.dir=1
+offsets.topic.replication.factor=1
+transaction.state.log.replication.factor=1
+transaction.state.log.min.isr=1
+log.flush.interval.messages=10000
+log.flush.interval.ms=1000
+log.retention.hours=168
+log.segment.bytes=1073741824
+log.retention.check.interval.ms=300000
+zookeeper.connect=localhost:2181
+group.initial.rebalance.delay.ms=0
+delete.topic.enable = true
+```
+
+
 ## Specific Instructions for Python
 
 ```
