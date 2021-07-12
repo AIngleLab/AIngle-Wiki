@@ -15,7 +15,7 @@ That's it!!!  You should now be connected to the KAFKA-AIngle broker.
 ## Specific Instructions for Python
 
 ```
-https://github.com/AIngleLab/AIngle-Wiki/tree/Tohoku-University
+https://github.com/AIngleLab/AIngle-Wiki/tree/aingle-python
 ```
 
 
