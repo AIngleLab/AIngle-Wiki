@@ -133,9 +133,17 @@ import sqlite3
 
 # kafka connection invoker
 producer = KafkaProducer(bootstrap_servers=["kafka.aingle.ai:9092"])
-# Creating table into database!!!
-# Connect to sqlite database
+# Creating a connection to the table that contains your dog suite data!!!
+# The following example connects to sqlite database.  In your case you should substitute the following line for your database.  
 conn = sqlite3.connect('../data.db')
+
+# This is an example for PostgreSQL. 
+#conn = psycopg2.connect(
+#    host="localhost",
+#    database="suppliers",
+#    user="postgres",
+#    password="Abcd1234")
+    
 # cursor object
 cursor = conn.cursor()
 # drop query
@@ -156,7 +164,10 @@ conn.close()
 def kafka_reproduce():
     try:
         print("Starting worker..")
-        conn = sqlite3.connect('../data.db')
+        # You should substitute the following line for your connecting to your database.  For example, PostgreSQL
+        conn = sqlite3.connect('../data.db') # If you follow the example above, you can just substitute this line.
+        # In the folloing line substitute the asteriscs for the name of the columns in your table that you want to share with AIngle's kafka broker.
+        # You can also leave the asterics and all the columns will be streamed to the AIngle kafka broker.
         cursor = conn.execute("SELECT * from task")
         producer.send('Dog-Suit', str(cursor).encode())
         print("Listening..")
