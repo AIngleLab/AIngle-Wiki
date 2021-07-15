@@ -168,7 +168,7 @@ def kafka_reproduce():
         conn = sqlite3.connect('../data.db') # If you follow the Example A above, you can just substitute this line.
         # In the folloing line substitute the asteriscs for the name of the columns in your table that you want to share with AIngle's kafka broker.
         # You can also leave the asterics and all the columns will be streamed to the AIngle kafka broker.
-        cursor = conn.execute("SELECT * from task")
+        cursor = conn.execute("SELECT * from task") # If you are following Example A, then just substitute "tasK" for the name of your PostgreSQL table.
         producer.send('Dog-Suit', str(cursor).encode())
         print("Listening..")
     except KafkaError as e:
